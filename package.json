@@ -54,25 +54,25 @@
         "laraguide.pintExecutable": {
           "type": "string",
           "default": "./cli format",
-          "markdownDescription": "%ext.config.pintExecutable%",
+          "description": "Executable to run pint",
           "scope": "resource"
         },
         "laraguide.enablePint": {
           "type": "boolean",
           "default": true,
-          "markdownDescription": "%ext.config.enablePint%",
+          "description": "Enable/disable pint",
           "scope": "resource"
         },
         "laraguide.larastanExecutable": {
           "type": "string",
           "default": "./cli analyze",
-          "markdownDescription": "%ext.config.larastanExecutable%",
+          "description": "Executable to run Larastan",
           "scope": "resource"
         },
         "laraguide.enableLarastan": {
           "type": "boolean",
           "default": true,
-          "markdownDescription": "%ext.config.enableLarastan%",
+          "description": "Enable/disable Larastan",
           "scope": "resource"
         }
       }
