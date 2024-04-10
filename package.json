@@ -1,0 +1,104 @@
+{
+  "name": "laraguide",
+  "displayName": "laraguide",
+  "description": "Using smoothly Pint and Larastan in docker context",
+  "version": "0.0.1",
+  "publisher": "henrotaym",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "keywords": [
+    "formatter",
+    "php",
+    "code formatting",
+    "code styling",
+    "utilities",
+    "laravel",
+    "laravel pint",
+    "phpstan",
+    "larastan",
+    "trustup"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "laraguide.format-file",
+        "title": "Format document using Pint",
+        "enablement": "editorLangId == php || resourceExtname == .php"
+      },
+      {
+        "command": "laraguide.format-workspace",
+        "title": "Format workspace using Pint"
+      },
+      {
+        "command": "laraguide.analyze-file",
+        "title": "Analyze document using Larastan",
+        "enablement": "editorLangId == php || resourceExtname == .php"
+      },
+      {
+        "command": "laraguide.analyze-workspace",
+        "title": "Analyze workspace using Larastan"
+      }
+    ],
+    "configuration": {
+      "title": "Laraguide",
+      "type": "object",
+      "properties": {
+        "laraguide.pintExecutable": {
+          "type": "string",
+          "default": "./cli format",
+          "markdownDescription": "%ext.config.pintExecutable%",
+          "scope": "resource"
+        },
+        "laraguide.enablePint": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%ext.config.enablePint%",
+          "scope": "resource"
+        },
+        "laraguide.larastanExecutable": {
+          "type": "string",
+          "default": "./cli analyze",
+          "markdownDescription": "%ext.config.larastanExecutable%",
+          "scope": "resource"
+        },
+        "laraguide.enableLarastan": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%ext.config.enableLarastan%",
+          "scope": "resource"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrotaym/vscode-laraguide"
+  }
+}
