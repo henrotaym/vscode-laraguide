@@ -2,7 +2,7 @@
   "name": "laraguide",
   "displayName": "laraguide",
   "description": "Using smoothly Pint and Larastan in docker context",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "henrotaym",
   "engines": {
     "vscode": "^1.88.0"
